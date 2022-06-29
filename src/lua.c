@@ -20,6 +20,8 @@
 #include "lauxlib.h"
 #include "lualib.h"
 
+#include "lobject.h"
+#include "lstring.h"
 
 #if !defined(LUA_PROGNAME)
 #define LUA_PROGNAME		"lua"
@@ -646,10 +648,15 @@ static int pmain (lua_State *L) {
   return 1;
 }
 
+void natvis_test(lua_State *L)
+{
+    TString *lua_str = luaS_new(L,"hello TString");
+}
 
 int main (int argc, char **argv) {
   int status, result;
   lua_State *L = luaL_newstate();  /* create state */
+  natvis_test(L);
   if (L == NULL) {
     l_message(argv[0], "cannot create state: not enough memory");
     return EXIT_FAILURE;
