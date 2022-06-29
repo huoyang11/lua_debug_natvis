@@ -20,4 +20,32 @@
 		<DisplayString>{contents}</DisplayString>
 		<StringView>contents</StringView>			<!--放大镜-->
 	</Type>
+
+	<Type Name="Proto">
+		<Expand>
+			<CustomListItems>
+				<Variable Name="item_code" InitialValue="0"/>
+				<Variable Name="size_code" InitialValue="0"/>
+				<Variable Name="i" InitialValue="0"/>
+
+				<Variable Name="A" InitialValue="0"/>
+				<Variable Name="B" InitialValue="0"/>
+				<Variable Name="C" InitialValue="0"/>
+				<Variable Name="Ax" InitialValue="0"/>
+				<Variable Name="Bx" InitialValue="0"/>
+				<Variable Name="sB" InitialValue="0"/>
+				<Variable Name="sC" InitialValue="0"/>
+				<Variable Name="sBx" InitialValue="0"/>
+				<Variable Name="k" InitialValue="0"/>
+				
+				<Exec>size_code = sizecode</Exec>
+
+				<Loop>
+					<Break Condition="i &gt; size_code"/>
+					<Exec>item_code = code[i]</Exec>
+					
+				</Loop>
+			</CustomListItems>
+		</Expand>
+	</Type>
 </AutoVisualizer>
