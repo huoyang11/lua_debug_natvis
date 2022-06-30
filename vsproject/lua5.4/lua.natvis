@@ -21,6 +21,13 @@
 		<StringView>contents</StringView>			<!--放大镜-->
 	</Type>
 
+	<Type Name="opcode_natvis">
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 0">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))}
+		</DisplayString>
+	</Type>
+	
 	<Type Name="Proto">
 		<Expand>
 			<CustomListItems>
@@ -28,6 +35,7 @@
 				<Variable Name="size_code" InitialValue="0"/>
 				<Variable Name="i" InitialValue="0"/>
 
+				<Variable Name="opcode" InitialValue="0"/>
 				<Variable Name="A" InitialValue="0"/>
 				<Variable Name="B" InitialValue="0"/>
 				<Variable Name="C" InitialValue="0"/>
@@ -43,7 +51,101 @@
 				<Loop>
 					<Break Condition="i &gt; size_code"/>
 					<Exec>item_code = code[i]</Exec>
-					
+					<Exec>opcode = (((int)(((item_code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0)))))</Exec>
+					<Exec>A = (((int)((((item_code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))</Exec>
+					<Exec>B = (((void)0), ((((int)((((item_code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))</Exec>
+					<Exec>C = (((void)0), ((((int)((((item_code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))</Exec>
+					<Exec>Ax = (((void)0), ((((int)((((item_code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(((8 + 8 + 1) + 8))))&lt;&lt;(0))))))))</Exec>
+					<Exec>Bx = (((void)0), ((((int)((((item_code)&gt;&gt;(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;((8 + 8 + 1))))&lt;&lt;(0))))))))</Exec>
+					<Exec>sB = (((((void)0), ((((int)((((item_code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))) - (((1&lt;&lt;8)-1) &gt;&gt; 1))</Exec>
+					<Exec>sC = (((((void)0), ((((int)((((item_code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))) - (((1&lt;&lt;8)-1) &gt;&gt; 1))</Exec>
+					<Exec>sBx = (((void)0), ((((int)((((item_code)&gt;&gt;(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;((8 + 8 + 1))))&lt;&lt;(0)))))) - (((1&lt;&lt;(8 + 8 + 1))-1)&gt;&gt;1)))</Exec>
+					<Exec>k = (((void)0), ((((int)((((item_code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))</Exec>
+
+					<Item Condition="opcode == 0" Name="MOVE">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 1" Name="LOADI">item_code</Item>
+					<Item Condition="opcode == 2" Name="LOADF">item_code</Item>
+					<Item Condition="opcode == 3" Name="LOADK">item_code</Item>
+					<Item Condition="opcode == 4" Name="LOADKX">item_code</Item>
+					<Item Condition="opcode == 5" Name="LOADFALSE">item_code</Item>
+					<Item Condition="opcode == 6" Name="LFALSESKIP">item_code</Item>
+					<Item Condition="opcode == 7" Name="LOADTRUE">item_code</Item>
+					<Item Condition="opcode == 8" Name="LOADNIL">item_code</Item>
+					<Item Condition="opcode == 9" Name="GETUPVAL">item_code</Item>
+					<Item Condition="opcode == 10" Name="SETUPVAL">item_code</Item>
+					<Item Condition="opcode == 11" Name="GETTABUP">item_code</Item>
+					<Item Condition="opcode == 12" Name="GETTABLE">item_code</Item>
+					<Item Condition="opcode == 13" Name="GETI">item_code</Item>
+					<Item Condition="opcode == 14" Name="GETFIELD">item_code</Item>
+					<Item Condition="opcode == 15" Name="SETTABUP">item_code</Item>
+					<Item Condition="opcode == 16" Name="SETTABLE">item_code</Item>
+					<Item Condition="opcode == 17" Name="SETI">item_code</Item>
+					<Item Condition="opcode == 18" Name="SETFIELD">item_code</Item>
+					<Item Condition="opcode == 19" Name="NEWTABLE">item_code</Item>
+					<Item Condition="opcode == 20" Name="SELF">item_code</Item>
+					<Item Condition="opcode == 21" Name="ADDI">item_code</Item>
+					<Item Condition="opcode == 22" Name="ADDK">item_code</Item>
+					<Item Condition="opcode == 23" Name="SUBK">item_code</Item>
+					<Item Condition="opcode == 24" Name="MULK">item_code</Item>
+					<Item Condition="opcode == 25" Name="MODK">item_code</Item>
+					<Item Condition="opcode == 26" Name="POWK">item_code</Item>
+					<Item Condition="opcode == 27" Name="DIVK">item_code</Item>
+					<Item Condition="opcode == 28" Name="IDIVK">item_code</Item>
+					<Item Condition="opcode == 29" Name="BANDK">item_code</Item>
+					<Item Condition="opcode == 30" Name="BORK">item_code</Item>
+					<Item Condition="opcode == 31" Name="BXORK">item_code</Item>
+					<Item Condition="opcode == 32" Name="SHRI">item_code</Item>
+					<Item Condition="opcode == 33" Name="SHLI">item_code</Item>
+					<Item Condition="opcode == 34" Name="ADD">item_code</Item>
+					<Item Condition="opcode == 35" Name="SUB">item_code</Item>
+					<Item Condition="opcode == 36" Name="MUL">item_code</Item>
+					<Item Condition="opcode == 37" Name="MOD">item_code</Item>
+					<Item Condition="opcode == 38" Name="POW">item_code</Item>
+					<Item Condition="opcode == 39" Name="DIV">item_code</Item>
+					<Item Condition="opcode == 40" Name="IDIV">item_code</Item>
+					<Item Condition="opcode == 41" Name="BAND">item_code</Item>
+					<Item Condition="opcode == 42" Name="BOR">item_code</Item>
+					<Item Condition="opcode == 43" Name="BXOR">item_code</Item>
+					<Item Condition="opcode == 44" Name="SHL">item_code</Item>
+					<Item Condition="opcode == 45" Name="SHR">item_code</Item>
+					<Item Condition="opcode == 46" Name="MMBIN">item_code</Item>
+					<Item Condition="opcode == 47" Name="MMBINI">item_code</Item>
+					<Item Condition="opcode == 48" Name="MMBINK">item_code</Item>
+					<Item Condition="opcode == 49" Name="UNM">item_code</Item>
+					<Item Condition="opcode == 50" Name="BNOT">item_code</Item>
+					<Item Condition="opcode == 51" Name="NOT">item_code</Item>
+					<Item Condition="opcode == 52" Name="LEN">item_code</Item>
+					<Item Condition="opcode == 53" Name="CONCAT">item_code</Item>
+					<Item Condition="opcode == 54" Name="CLOSE">item_code</Item>
+					<Item Condition="opcode == 55" Name="TBC">item_code</Item>
+					<Item Condition="opcode == 56" Name="JMP">item_code</Item>
+					<Item Condition="opcode == 57" Name="EQ">item_code</Item>
+					<Item Condition="opcode == 58" Name="LT">item_code</Item>
+					<Item Condition="opcode == 59" Name="LE">item_code</Item>
+					<Item Condition="opcode == 60" Name="EQK">item_code</Item>
+					<Item Condition="opcode == 61" Name="EQI">item_code</Item>
+					<Item Condition="opcode == 62" Name="LTI">item_code</Item>
+					<Item Condition="opcode == 63" Name="LEI">item_code</Item>
+					<Item Condition="opcode == 64" Name="GTI">item_code</Item>
+					<Item Condition="opcode == 65" Name="GEI">item_code</Item>
+					<Item Condition="opcode == 66" Name="TEST">item_code</Item>
+					<Item Condition="opcode == 67" Name="TESTSET">item_code</Item>
+					<Item Condition="opcode == 68" Name="CALL">item_code</Item>
+					<Item Condition="opcode == 69" Name="TAILCALL">item_code</Item>
+					<Item Condition="opcode == 70" Name="RETURN">item_code</Item>
+					<Item Condition="opcode == 71" Name="RETURN0">item_code</Item>
+					<Item Condition="opcode == 72" Name="RETURN1">item_code</Item>
+					<Item Condition="opcode == 73" Name="FORLOOP">item_code</Item>
+					<Item Condition="opcode == 74" Name="FORPREP">item_code</Item>
+					<Item Condition="opcode == 75" Name="TFORPREP">item_code</Item>
+					<Item Condition="opcode == 76" Name="TFORCALL">item_code</Item>
+					<Item Condition="opcode == 77" Name="TFORLOOP">item_code</Item>
+					<Item Condition="opcode == 78" Name="SETLIST">item_code</Item>
+					<Item Condition="opcode == 79" Name="CLOSURE">item_code</Item>
+					<Item Condition="opcode == 80" Name="VARARG">item_code</Item>
+					<Item Condition="opcode == 81" Name="VARARGPREP">item_code</Item>
+					<Item Condition="opcode == 82" Name="EXTRAARG">item_code</Item>
+					<Exec>i = i + 1</Exec>
 				</Loop>
 			</CustomListItems>
 		</Expand>

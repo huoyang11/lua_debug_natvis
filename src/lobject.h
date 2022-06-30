@@ -487,6 +487,13 @@ typedef struct Udata0 {
 /* }================================================================== */
 
 
+typedef struct opcode_natvis
+{
+    unsigned int code;
+}opcode_natvis;
+
+opcode_natvis __op_debug_natvis;
+
 /*
 ** {==================================================================
 ** Prototypes
