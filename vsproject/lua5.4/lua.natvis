@@ -22,9 +22,462 @@
 	</Type>
 
 	<Type Name="opcode_natvis">
+		<!--OP_MOVE-->
 		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 0">
 			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
 			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))}
+		</DisplayString>
+		<!--OP_LOADI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 1">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			sbx = {(((((int)((((code)&gt;&gt;(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;((8 + 8 + 1))))&lt;&lt;(0)))))) - (((1&lt;&lt;(8 + 8 + 1))-1)&gt;&gt;1)))}
+		</DisplayString>
+		<!--OP_LOADF-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 2">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			sbx = {(((((int)((((code)&gt;&gt;(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;((8 + 8 + 1))))&lt;&lt;(0)))))) - (((1&lt;&lt;(8 + 8 + 1))-1)&gt;&gt;1)))}
+		</DisplayString>
+		<!--OP_LOADK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 3">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			bx = {(((((int)((((code)&gt;&gt;(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;((8 + 8 + 1))))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_LOADKX-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 4">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))}
+		</DisplayString>
+		<!--OP_LOADFALSE-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 5">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))}
+		</DisplayString>
+		<!--OP_LFALSESKIP-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 6">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))}
+		</DisplayString>
+		<!--OP_LOADTRUE-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 7">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))}
+		</DisplayString>
+		<!--OP_LOADNIL-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 8">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))}
+		</DisplayString>
+		<!--OP_GETUPVAL-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 9">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))}
+		</DisplayString>
+		<!--OP_SETUPVAL-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 10">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))}
+		</DisplayString>
+		<!--OP_GETTABUP-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 11">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_GETTABLE-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 12">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_GETI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 13">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_GETFIELD-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 14">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SETTABUP-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 15">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SETTABLE-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 16">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SETI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 17">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SETFIELD-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 18">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_NEWTABLE-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 19">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SELF-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 20">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_ADDI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 21">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			sc = {(((((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))) - (((1&lt;&lt;8)-1) &gt;&gt; 1))}
+		</DisplayString>
+		<!--OP_ADDK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 22">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SUBK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 23">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_MULK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 24">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_MODK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 25">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_POWK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 26">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_DIVK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 27">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_IDIVK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 28">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_BANDK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 29">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_BORK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 30">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_BXORK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 31">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SHRI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 32">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			sc = {(((((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))) - (((1&lt;&lt;8)-1) &gt;&gt; 1))}
+		</DisplayString>
+		<!--OP_SHLI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 33">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			sc = {(((((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))) - (((1&lt;&lt;8)-1) &gt;&gt; 1))}
+		</DisplayString>
+		<!--OP_ADD-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 34">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SUB-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 35">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_MUL-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 36">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_MOD-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 37">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_POW-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 38">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_DIV-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 39">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_IDIV-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 40">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_BAND-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 41">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_BOR-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 42">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_BXOR-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 43">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SHL-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 44">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SHR-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 45">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_MMBIN-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 46">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_MMBINI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 47">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_MMBINK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 48">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_UNM-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 49">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))}
+		</DisplayString>
+		<!--OP_BNOT-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 50">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))}
+		</DisplayString>
+		<!--OP_NOT-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 51">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))}
+		</DisplayString>
+		<!--OP_LEN-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 52">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))}
+		</DisplayString>
+		<!--OP_CONCAT-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 53">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))}
+		</DisplayString>
+		<!--OP_CLOSE-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 54">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))}
+		</DisplayString>
+		<!--OP_TBC-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 55">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&gt;&gt;(8)))&lt;&lt;(0))))))}
+		</DisplayString>
+		<!--OP_JMP-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 56">
+			sJ = {(((((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&gt;&gt;(((8 + 8 + 1) + 8))))&lt;&lt;(0)))))) - (((1 &lt;&lt; ((8 + 8 + 1) + 8)) - 1) &gt;&gt; 1)))}
+		</DisplayString>
+		<!--OP_EQ-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 57">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_LT-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 58">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_LE-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 59">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_EQK-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 60">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_EQI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 61">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_LTI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 62">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_LEI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 63">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_GTI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 64">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_GEI-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 65">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_TEST-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 66">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_TESTSET-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 67">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			k = {(((((int)((((code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_CALL-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 68">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_TAILCALL-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 69">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_RETURN-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 70">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_RETURN0-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 71">
+		</DisplayString>
+		<!--OP_RETURN1-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 72">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))}
+		</DisplayString>
+		<!--OP_FORLOOP-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 73">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			bx = {(((((int)((((code)&gt;&gt;(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;((8 + 8 + 1))))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_FORPREP-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 74">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			bx = {(((((int)((((code)&gt;&gt;(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;((8 + 8 + 1))))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_TFORPREP-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 75">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			bx = {(((((int)((((code)&gt;&gt;(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;((8 + 8 + 1))))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_TFORCALL-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 76">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_TFORLOOP-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 77">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			bx = {(((((int)((((code)&gt;&gt;(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;((8 + 8 + 1))))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_SETLIST-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 78">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			b = {((((((int)((((code)&gt;&gt;((((0 + 7) + 8) + 1))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0)))))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_CLOSURE-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 79">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			bx = {(((((int)((((code)&gt;&gt;(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;((8 + 8 + 1))))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_VARARG-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 80">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))},
+			c = {(((((int)((((code)&gt;&gt;(((((0 + 7) + 8) + 1) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))))}
+		</DisplayString>
+		<!--OP_VARARGPREP-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 81">
+			a = {(((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(8)))&lt;&lt;(0))))))}
+		</DisplayString>
+		<!--OP_EXTRAARG-->
+		<DisplayString Condition="(((unsigned int)(((code)&gt;&gt;0) &amp; ((~((~(unsigned int)0)&lt;&lt;(7)))&lt;&lt;(0))))) == 82">
+			ax = {(((((int)((((code)&gt;&gt;((0 + 7))) &amp; ((~((~(unsigned int)0)&lt;&lt;(((8 + 8 + 1) + 8))))&lt;&lt;(0))))))))}
 		</DisplayString>
 	</Type>
 	
@@ -63,88 +516,88 @@
 					<Exec>k = (((void)0), ((((int)((((item_code)>>(((0 + 7) + 8))) &amp; ((~((~(unsigned int)0)&lt;&lt;(1)))&lt;&lt;(0))))))))</Exec>
 
 					<Item Condition="opcode == 0" Name="MOVE">*((opcode_natvis *)&amp;item_code)</Item>
-					<Item Condition="opcode == 1" Name="LOADI">item_code</Item>
-					<Item Condition="opcode == 2" Name="LOADF">item_code</Item>
-					<Item Condition="opcode == 3" Name="LOADK">item_code</Item>
-					<Item Condition="opcode == 4" Name="LOADKX">item_code</Item>
-					<Item Condition="opcode == 5" Name="LOADFALSE">item_code</Item>
-					<Item Condition="opcode == 6" Name="LFALSESKIP">item_code</Item>
-					<Item Condition="opcode == 7" Name="LOADTRUE">item_code</Item>
-					<Item Condition="opcode == 8" Name="LOADNIL">item_code</Item>
-					<Item Condition="opcode == 9" Name="GETUPVAL">item_code</Item>
-					<Item Condition="opcode == 10" Name="SETUPVAL">item_code</Item>
-					<Item Condition="opcode == 11" Name="GETTABUP">item_code</Item>
-					<Item Condition="opcode == 12" Name="GETTABLE">item_code</Item>
-					<Item Condition="opcode == 13" Name="GETI">item_code</Item>
-					<Item Condition="opcode == 14" Name="GETFIELD">item_code</Item>
-					<Item Condition="opcode == 15" Name="SETTABUP">item_code</Item>
-					<Item Condition="opcode == 16" Name="SETTABLE">item_code</Item>
-					<Item Condition="opcode == 17" Name="SETI">item_code</Item>
-					<Item Condition="opcode == 18" Name="SETFIELD">item_code</Item>
-					<Item Condition="opcode == 19" Name="NEWTABLE">item_code</Item>
-					<Item Condition="opcode == 20" Name="SELF">item_code</Item>
-					<Item Condition="opcode == 21" Name="ADDI">item_code</Item>
-					<Item Condition="opcode == 22" Name="ADDK">item_code</Item>
-					<Item Condition="opcode == 23" Name="SUBK">item_code</Item>
-					<Item Condition="opcode == 24" Name="MULK">item_code</Item>
-					<Item Condition="opcode == 25" Name="MODK">item_code</Item>
-					<Item Condition="opcode == 26" Name="POWK">item_code</Item>
-					<Item Condition="opcode == 27" Name="DIVK">item_code</Item>
-					<Item Condition="opcode == 28" Name="IDIVK">item_code</Item>
-					<Item Condition="opcode == 29" Name="BANDK">item_code</Item>
-					<Item Condition="opcode == 30" Name="BORK">item_code</Item>
-					<Item Condition="opcode == 31" Name="BXORK">item_code</Item>
-					<Item Condition="opcode == 32" Name="SHRI">item_code</Item>
-					<Item Condition="opcode == 33" Name="SHLI">item_code</Item>
-					<Item Condition="opcode == 34" Name="ADD">item_code</Item>
-					<Item Condition="opcode == 35" Name="SUB">item_code</Item>
-					<Item Condition="opcode == 36" Name="MUL">item_code</Item>
-					<Item Condition="opcode == 37" Name="MOD">item_code</Item>
-					<Item Condition="opcode == 38" Name="POW">item_code</Item>
-					<Item Condition="opcode == 39" Name="DIV">item_code</Item>
-					<Item Condition="opcode == 40" Name="IDIV">item_code</Item>
-					<Item Condition="opcode == 41" Name="BAND">item_code</Item>
-					<Item Condition="opcode == 42" Name="BOR">item_code</Item>
-					<Item Condition="opcode == 43" Name="BXOR">item_code</Item>
-					<Item Condition="opcode == 44" Name="SHL">item_code</Item>
-					<Item Condition="opcode == 45" Name="SHR">item_code</Item>
-					<Item Condition="opcode == 46" Name="MMBIN">item_code</Item>
-					<Item Condition="opcode == 47" Name="MMBINI">item_code</Item>
-					<Item Condition="opcode == 48" Name="MMBINK">item_code</Item>
-					<Item Condition="opcode == 49" Name="UNM">item_code</Item>
-					<Item Condition="opcode == 50" Name="BNOT">item_code</Item>
-					<Item Condition="opcode == 51" Name="NOT">item_code</Item>
-					<Item Condition="opcode == 52" Name="LEN">item_code</Item>
-					<Item Condition="opcode == 53" Name="CONCAT">item_code</Item>
-					<Item Condition="opcode == 54" Name="CLOSE">item_code</Item>
-					<Item Condition="opcode == 55" Name="TBC">item_code</Item>
-					<Item Condition="opcode == 56" Name="JMP">item_code</Item>
-					<Item Condition="opcode == 57" Name="EQ">item_code</Item>
-					<Item Condition="opcode == 58" Name="LT">item_code</Item>
-					<Item Condition="opcode == 59" Name="LE">item_code</Item>
-					<Item Condition="opcode == 60" Name="EQK">item_code</Item>
-					<Item Condition="opcode == 61" Name="EQI">item_code</Item>
-					<Item Condition="opcode == 62" Name="LTI">item_code</Item>
-					<Item Condition="opcode == 63" Name="LEI">item_code</Item>
-					<Item Condition="opcode == 64" Name="GTI">item_code</Item>
-					<Item Condition="opcode == 65" Name="GEI">item_code</Item>
-					<Item Condition="opcode == 66" Name="TEST">item_code</Item>
-					<Item Condition="opcode == 67" Name="TESTSET">item_code</Item>
-					<Item Condition="opcode == 68" Name="CALL">item_code</Item>
-					<Item Condition="opcode == 69" Name="TAILCALL">item_code</Item>
-					<Item Condition="opcode == 70" Name="RETURN">item_code</Item>
-					<Item Condition="opcode == 71" Name="RETURN0">item_code</Item>
-					<Item Condition="opcode == 72" Name="RETURN1">item_code</Item>
-					<Item Condition="opcode == 73" Name="FORLOOP">item_code</Item>
-					<Item Condition="opcode == 74" Name="FORPREP">item_code</Item>
-					<Item Condition="opcode == 75" Name="TFORPREP">item_code</Item>
-					<Item Condition="opcode == 76" Name="TFORCALL">item_code</Item>
-					<Item Condition="opcode == 77" Name="TFORLOOP">item_code</Item>
-					<Item Condition="opcode == 78" Name="SETLIST">item_code</Item>
-					<Item Condition="opcode == 79" Name="CLOSURE">item_code</Item>
-					<Item Condition="opcode == 80" Name="VARARG">item_code</Item>
-					<Item Condition="opcode == 81" Name="VARARGPREP">item_code</Item>
-					<Item Condition="opcode == 82" Name="EXTRAARG">item_code</Item>
+					<Item Condition="opcode == 1" Name="LOADI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 2" Name="LOADF">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 3" Name="LOADK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 4" Name="LOADKX">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 5" Name="LOADFALSE">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 6" Name="LFALSESKIP">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 7" Name="LOADTRUE">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 8" Name="LOADNIL">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 9" Name="GETUPVAL">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 10" Name="SETUPVAL">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 11" Name="GETTABUP">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 12" Name="GETTABLE">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 13" Name="GETI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 14" Name="GETFIELD">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 15" Name="SETTABUP">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 16" Name="SETTABLE">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 17" Name="SETI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 18" Name="SETFIELD">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 19" Name="NEWTABLE">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 20" Name="SELF">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 21" Name="ADDI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 22" Name="ADDK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 23" Name="SUBK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 24" Name="MULK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 25" Name="MODK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 26" Name="POWK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 27" Name="DIVK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 28" Name="IDIVK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 29" Name="BANDK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 30" Name="BORK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 31" Name="BXORK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 32" Name="SHRI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 33" Name="SHLI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 34" Name="ADD">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 35" Name="SUB">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 36" Name="MUL">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 37" Name="MOD">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 38" Name="POW">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 39" Name="DIV">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 40" Name="IDIV">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 41" Name="BAND">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 42" Name="BOR">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 43" Name="BXOR">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 44" Name="SHL">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 45" Name="SHR">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 46" Name="MMBIN">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 47" Name="MMBINI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 48" Name="MMBINK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 49" Name="UNM">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 50" Name="BNOT">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 51" Name="NOT">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 52" Name="LEN">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 53" Name="CONCAT">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 54" Name="CLOSE">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 55" Name="TBC">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 56" Name="JMP">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 57" Name="EQ">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 58" Name="LT">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 59" Name="LE">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 60" Name="EQK">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 61" Name="EQI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 62" Name="LTI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 63" Name="LEI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 64" Name="GTI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 65" Name="GEI">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 66" Name="TEST">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 67" Name="TESTSET">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 68" Name="CALL">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 69" Name="TAILCALL">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 70" Name="RETURN">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 71" Name="RETURN0">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 72" Name="RETURN1">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 73" Name="FORLOOP">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 74" Name="FORPREP">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 75" Name="TFORPREP">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 76" Name="TFORCALL">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 77" Name="TFORLOOP">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 78" Name="SETLIST">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 79" Name="CLOSURE">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 80" Name="VARARG">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 81" Name="VARARGPREP">*((opcode_natvis *)&amp;item_code)</Item>
+					<Item Condition="opcode == 82" Name="EXTRAARG">*((opcode_natvis *)&amp;item_code)</Item>
 					<Exec>i = i + 1</Exec>
 				</Loop>
 			</CustomListItems>

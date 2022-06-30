@@ -28,6 +28,7 @@
 #include "lstring.h"
 #include "lvm.h"
 
+opcode_natvis __op_debug_natvis;
 
 /*
 ** Computes ceil(log2(x))
