@@ -784,6 +784,12 @@
 		<StringView>(TString *)(u.key_val.gc)</StringView>
     <Expand>
       
+        <Item Name="value" Condition="i_val.tt_==6">(LClosure *)(i_val.value_.gc)</Item>
+		    <Item Name="value" Condition="i_val.tt_==22">i_val.value_.f</Item>
+		    <Item Name="value" Condition="i_val.tt_==38">(CClosure *)(i_val.value_.gc)</Item>
+        <Item Name="value" Condition="i_val.tt_==70">(LClosure *)(i_val.value_.gc)</Item>
+        <Item Name="value" Condition="i_val.tt_==102">(CClosure *)(i_val.value_.gc)</Item>
+        
         <CustomListItems Condition="i_val.tt_==5 || i_val.tt_==69">
           <Variable Name="asize" InitialValue="0" />
           <Variable Name="lsize" InitialValue="0" />
