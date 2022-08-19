@@ -59,7 +59,8 @@
         </CustomListItems>
       </Expand>
     </Synthetic>
-    
+
+    <Item Name="l_G">l_G</Item>
 		<CustomListItems>
 			<Variable Name="it" InitialValue="(StackValue * )0" />
 			<Exec>it = stack</Exec>

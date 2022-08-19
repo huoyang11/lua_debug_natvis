@@ -59,8 +59,23 @@
               </CustomListItems>
             </Expand>
           </Synthetic>
-          
-          <Item Name="sweepgc">sweepgc</Item>
+        
+          <!--sweepgc-->
+          <Synthetic Name="sweepgc">
+            <DisplayString>sweepgc</DisplayString>
+            <Expand>
+              <CustomListItems>
+                <Variable Name="it" InitialValue="(GCObject *)(*sweepgc)"/>
+                <Variable Name="i" InitialValue="0"/>
+                <Loop>
+                  <Break Condition="it == (GCObject *)0"/>
+                  <Item Name="{i}">it</Item>
+                  <Exec>it = it->next</Exec>
+                  <Exec>i = i + 1</Exec>
+                </Loop>
+              </CustomListItems>
+            </Expand>
+          </Synthetic>
         
           <!--finobj-->
           <Synthetic Name="finobj">
