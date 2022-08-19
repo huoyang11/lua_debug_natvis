@@ -18,6 +18,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{BF3BD393-BDD1-4FD4-87C3-D80751CF26E1}"
 	ProjectSection(SolutionItems) = preProject
 		natvis\lua_state.natvis = natvis\lua_state.natvis
+		natvis\gcobject.natvis = natvis\gcobject.natvis
+		natvis\global_state.natvis = natvis\global_state.natvis
 		natvis\node.natvis = natvis\node.natvis
 		natvis\opcode_natvis.natvis = natvis\opcode_natvis.natvis
 		natvis\proto.natvis = natvis\proto.natvis
