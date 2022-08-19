@@ -103,10 +103,30 @@
                 <Variable Name="i" InitialValue="0"/>
                 <Loop>
                   <Break Condition="it == (GCObject *)0"/>
+
                   <Item Name="{i}">it</Item>
-                  <Exec>it = it->next</Exec>
+                  <If Condition="it->tt == 5">
+                    <Exec>it = ((Table *)it)->gclist</Exec>
+                  </If>
+                  <Elseif Condition="it->tt == 6">
+                    <Exec>it = ((Closure *)it)->l.gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 6">
+                    <Exec>it = ((Closure *)it)->c.gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 8">
+                    <Exec>it = ((lua_State *)it)->gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 10">
+                    <Exec>it = ((Proto *)it)->gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 7">
+                    <Exec>it = ((Udata *)it)->gclist</Exec>
+                  </Elseif>
+
                   <Exec>i = i + 1</Exec>
-                </Loop>
+                
+              </Loop>
               </CustomListItems>
             </Expand>
           </Synthetic>
@@ -121,7 +141,24 @@
                 <Loop>
                   <Break Condition="it == (GCObject *)0"/>
                   <Item Name="{i}">it</Item>
-                  <Exec>it = it->next</Exec>
+                  <If Condition="it->tt == 5">
+                    <Exec>it = ((Table *)it)->gclist</Exec>
+                  </If>
+                  <Elseif Condition="it->tt == 6">
+                    <Exec>it = ((Closure *)it)->l.gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 6">
+                    <Exec>it = ((Closure *)it)->c.gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 8">
+                    <Exec>it = ((lua_State *)it)->gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 10">
+                    <Exec>it = ((Proto *)it)->gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 7">
+                    <Exec>it = ((Udata *)it)->gclist</Exec>
+                  </Elseif>
                   <Exec>i = i + 1</Exec>
                 </Loop>
               </CustomListItems>
@@ -138,7 +175,24 @@
                 <Loop>
                   <Break Condition="it == (GCObject *)0"/>
                   <Item Name="{i}">it</Item>
-                  <Exec>it = it->next</Exec>
+                  <If Condition="it->tt == 5">
+                    <Exec>it = ((Table *)it)->gclist</Exec>
+                  </If>
+                  <Elseif Condition="it->tt == 6">
+                    <Exec>it = ((Closure *)it)->l.gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 6">
+                    <Exec>it = ((Closure *)it)->c.gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 8">
+                    <Exec>it = ((lua_State *)it)->gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 10">
+                    <Exec>it = ((Proto *)it)->gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 7">
+                    <Exec>it = ((Udata *)it)->gclist</Exec>
+                  </Elseif>
                   <Exec>i = i + 1</Exec>
                 </Loop>
               </CustomListItems>
@@ -155,7 +209,24 @@
                 <Loop>
                   <Break Condition="it == (GCObject *)0"/>
                   <Item Name="{i}">it</Item>
-                  <Exec>it = it->next</Exec>
+                  <If Condition="it->tt == 5">
+                    <Exec>it = ((Table *)it)->gclist</Exec>
+                  </If>
+                  <Elseif Condition="it->tt == 6">
+                    <Exec>it = ((Closure *)it)->l.gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 6">
+                    <Exec>it = ((Closure *)it)->c.gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 8">
+                    <Exec>it = ((lua_State *)it)->gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 10">
+                    <Exec>it = ((Proto *)it)->gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 7">
+                    <Exec>it = ((Udata *)it)->gclist</Exec>
+                  </Elseif>
                   <Exec>i = i + 1</Exec>
                 </Loop>
               </CustomListItems>
@@ -172,7 +243,24 @@
                 <Loop>
                   <Break Condition="it == (GCObject *)0"/>
                   <Item Name="{i}">it</Item>
-                  <Exec>it = it->next</Exec>
+                  <If Condition="it->tt == 5">
+                    <Exec>it = ((Table *)it)->gclist</Exec>
+                  </If>
+                  <Elseif Condition="it->tt == 6">
+                    <Exec>it = ((Closure *)it)->l.gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 6">
+                    <Exec>it = ((Closure *)it)->c.gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 8">
+                    <Exec>it = ((lua_State *)it)->gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 10">
+                    <Exec>it = ((Proto *)it)->gclist</Exec>
+                  </Elseif>
+                  <Elseif Condition="it->tt == 7">
+                    <Exec>it = ((Udata *)it)->gclist</Exec>
+                  </Elseif>
                   <Exec>i = i + 1</Exec>
                 </Loop>
               </CustomListItems>
