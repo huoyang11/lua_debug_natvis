@@ -39,6 +39,19 @@
 
       <Item Name="value" Condition="tt==10">tt</Item>
 
+      <CustomListItems Condition="tt==8 || tt== 72">
+        <Variable Name="it" InitialValue="(StackValue * )0" />
+        <Variable Name="_thread" InitialValue="(lua_State *)0"/>
+
+        <Exec>_thread = (lua_State *)(&amp;next)</Exec>
+        <Exec>it = _thread->stack</Exec>
+        <Loop>
+          <Break Condition="it == _thread->top"/>
+          <Item>it->val</Item>
+          <Exec>it = it + 1</Exec>
+        </Loop>
+      </CustomListItems>
+
       <Item Name="value" Condition="tt==9">tt</Item>
       <Item Name="value" Condition="tt==6">((LClosure *)(&amp;next))->p</Item>
       <Item Name="value" Condition="tt==70">((LClosure *)(&amp;next))->p</Item>
