@@ -1,8 +1,10 @@
-local a = 20;
+g_test = 23
 
-local b = a;
+function test()
+	g_test = g_test + 1
+	print(g_test)
+	return 1
+end
 
-local c = {}
-
-c.a = a
-c.b = b
+local ret = test()
+print(ret)
