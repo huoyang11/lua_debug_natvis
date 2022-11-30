@@ -4,3 +4,4 @@ vsproject/lua5.4/x64/
 vsproject/lua5.4/luac/x64/
 vsproject/lua5.4/lualib/x64/
 vsproject/lua5.4/luahook/x64/
+src/.vscode/

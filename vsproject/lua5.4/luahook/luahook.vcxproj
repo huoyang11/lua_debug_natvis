@@ -130,7 +130,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
+    <ClCompile Include="luadebugger.cpp" />
+    <ClCompile Include="luapdb.cpp" />
+    <ClCompile Include="luautil.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="luacommon.h" />
+    <ClInclude Include="luadebugger.h" />
+    <ClInclude Include="luapdb.h" />
+    <ClInclude Include="luautil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

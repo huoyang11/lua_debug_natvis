@@ -1,17 +1,33 @@
-﻿#include <lua.h>
-#include <lualib.h>
-#include <lauxlib.h>
-#include <lstate.h>
-#include <ldebug.h>
-#include <lopcodes.h>
-#include <lopnames.h>
+﻿#include "luacommon.h"
+#include "luautil.h"
+#include <string.h>
 
 int count = 0;
 
-#define COMMENT		"\t; "
-#define EXTRAARG	GETARG_Ax(code[pc+1])
-#define EXTRAARGC	(EXTRAARG*(MAXARG_C+1))
-#define ISK		(isk ? "k" : "")
+//void funcinfo(lua_Debug* ar, Closure* cl) {
+//    if (noLuaClosure(cl)) {
+//        ar->source = "=[C]";
+//        ar->srclen = LL("=[C]");
+//        ar->linedefined = -1;
+//        ar->lastlinedefined = -1;
+//        ar->what = "C";
+//    }
+//    else {
+//        const Proto* p = cl->l.p;
+//        if (p->source) {
+//            ar->source = getstr(p->source);
+//            ar->srclen = tsslen(p->source);
+//        }
+//        else {
+//            ar->source = "=?";
+//            ar->srclen = LL("=?");
+//        }
+//        ar->linedefined = p->linedefined;
+//        ar->lastlinedefined = p->lastlinedefined;
+//        ar->what = (ar->linedefined == 0) ? "main" : "Lua";
+//    }
+//    luaO_chunkid(ar->short_src, ar->source, ar->srclen);
+//}
 
 void print_code(Instruction i)
 {
@@ -24,6 +40,13 @@ void lua_Hook_call(lua_State* L, lua_Debug* ar)
     if (ar->event == LUA_HOOKCALL)
     {
         printf("event : hook call!\n");
+        CallInfo* ci = ar->i_ci;
+        if (!isLfunction(s2v((ci)->func))) return;
+        const Proto* p = ci_func(ci)->p;
+        lua_getinfo(L, "Slnt", ar);
+        std::string funname = get_function_name(L,ar);
+        //pushfuncname(L, ar);
+        int a = 20;
     }
 
     if (ar->event == LUA_HOOKCOUNT)

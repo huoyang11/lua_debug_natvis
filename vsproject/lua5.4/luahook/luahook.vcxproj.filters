@@ -15,8 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="luapdb.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="luadebugger.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="luautil.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="luacommon.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="luapdb.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="luadebugger.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="luautil.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
