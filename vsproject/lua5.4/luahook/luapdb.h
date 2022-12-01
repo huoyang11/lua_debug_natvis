@@ -1,8 +1,11 @@
-#ifndef __LUAPDB_H__
+﻿#ifndef __LUAPDB_H__
 #define __LUAPDB_H__
 
 #include <string>
 #include <stdint.h>
+
+struct lua_State;
+struct lua_Debug;
 
 typedef struct luafunpdb
 {
@@ -19,6 +22,7 @@ typedef struct luapdb
 	std::string filepath;		//文件路径
 }luapdb;
 
-struct luapdb* create_luapdb(const std::string &filepath);
+//创建符号
+struct luapdb* create_luapdb(lua_State* L, lua_Debug* ar);
 
 #endif
